@@ -1,3 +1,6 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: './src/index.tsx',
     output: {
@@ -5,6 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
         publicPath: '/Student-s-Home/',
+        assetModuleFilename: 'images/[hash][ext][query]',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
@@ -19,7 +23,11 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg|webp)$/i,
+                type: 'asset/resource',
+            },
         ],
     },
     plugins: [
@@ -33,5 +41,4 @@ module.exports = {
         open: true,
         historyApiFallback: true,
     },
-    mode: 'development',
 };

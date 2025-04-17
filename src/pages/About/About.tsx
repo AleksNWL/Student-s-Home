@@ -10,8 +10,16 @@ export default function About() {
             <div className="main-container">
                 <h1>Возможности:</h1>
                 <div className="container-links">
-                    <Button color="danger" variant="solid"> <Link to={"/about/lecturer"}>Для преподавателя</Link></Button>
-                    <Button color="primary" variant="solid"><Link to={"/about/student"}>Уведомления студента</Link></Button>
+                    <Button color="danger" variant="solid">
+                        <Link to={"/about/lecturer"}>
+                            Для преподавателя
+                        </Link>
+                    </Button>
+                    <Button color="primary" variant="solid">
+                        <Link to={"/about/student"}>
+                            Уведомления студента
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </>
