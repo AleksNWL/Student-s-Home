@@ -55,7 +55,7 @@ const Lecturer = () => {
 
                     <Form.Item>
                         <Button type="primary" htmlType="submit" block>
-                            Отправить сообщение
+                            Отправить сообщение студентам
                         </Button>
                     </Form.Item>
                 </Form>
