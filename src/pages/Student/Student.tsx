@@ -1,5 +1,7 @@
 import { Button } from "antd";
 import { useState } from "react";
+import {CaretLeftOutlined} from "@ant-design/icons";
+import {Link} from "react-router-dom";
 
 export default function Student() {
     const [rules, setRules] = useState<boolean>(false);
@@ -16,9 +18,11 @@ export default function Student() {
 
     return (
         <>
-            <div>Уведомления студента</div>
-            <Button type="link" onClick={handleClick}>Хочу получать уведомления</Button>
-            {rules && <div>Уведомления активированы</div>}
+            <Link to={"/about"} className="link-back"><CaretLeftOutlined />About</Link>
+            <div className="main-container">
+                <p>Уведомления студента {rules && <span>✅</span>}</p>
+                <Button type="link" onClick={handleClick}>Хочу получать уведомления</Button>
+            </div>
         </>
     );
 }
